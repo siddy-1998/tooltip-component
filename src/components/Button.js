@@ -3,21 +3,28 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import SplitButton from 'react-bootstrap/SplitButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Button extends React.Component {
-   
-   render(){
+function Button (props)  {
+
+    const { setPosition , onMouseOverButton , onMouseAwayFromButton , position} = props;
+
+
+    const handleSelect = (e) =>{
+        //console.log(e); 
+        setPosition(e);        
+    }
+
        return ( 
-           <div className="btn-container">
-               <SplitButton title="ToolTip Button" size="lg">
-                   <Dropdown.Item eventKey="1">Top</Dropdown.Item>
-                   <Dropdown.Item eventKey="2">Bottom</Dropdown.Item>
-                   <Dropdown.Item eventKey="3">Left</Dropdown.Item>
-                   <Dropdown.Item eventKey="3">Right</Dropdown.Item>
+           <div className="btn-container"> 
+               <SplitButton title="ToolTip Button" id="tooltip-btn" size="lg" onMouseEnter={onMouseOverButton} onMouseLeave={onMouseAwayFromButton} onSelect={handleSelect}>
+                   <Dropdown.Item eventKey="Top" active={position==='Top'?"true":""} >Top</Dropdown.Item>
+                   <Dropdown.Item eventKey="Bottom" active={position==='Bottom'?"true":""}>Bottom</Dropdown.Item>
+                   <Dropdown.Item eventKey="Left" active={position==='Left'?"true":""}>Left</Dropdown.Item>
+                   <Dropdown.Item eventKey="Right" active={position==='Right'?"true":""}>Right</Dropdown.Item>
                </SplitButton>
           </div>
     );
 
-   }  
+
     
 }
 

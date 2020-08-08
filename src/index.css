@@ -5,17 +5,105 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+   
 }
 
 .btn-container{
-  display: flex;
-  justify-content: center;
-  height: 80vh;
-  align-items: center;
+  
+  margin-top:260px;
+  margin-left: 600px;
+}
+
+/* tooltip */
+#tooltip {
+  position: absolute;
+  text-align: left;
+  font-size: 15px;
+  display: inline-block;
+}
+
+#tooltip.right {
+   margin-left: 807px;
+   margin-top: -43px;
+    
+}
+
+#tooltip.left {
+  margin-top: -43px;
+  margin-left: 423px;
+}
+
+#tooltip.top {
+  margin-left: 618px;
+  margin-top: -89px;
+  
+}
+
+#tooltip.bottom {
+  margin-left: 618px;
+  margin-top: 6px;
+
+}
+
+#tooltip .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color:#EEB868;
+}
+
+#tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: auto;
+  margin-left: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #EEB868;
+}
+
+
+
+#tooltip.top .tooltip-arrow {
+  top: auto;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #EEB868;
+}
+
+#tooltip.left .tooltip-arrow {
+  top: 50%;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color:#EEB868;
+  right: -5px;
+  left: auto;
+}
+
+#tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #EEB868;
+}
+
+#tooltip .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+}
+
+#tooltip .tooltip-label {
+  width: 170px;
+  height: 35px;
+  padding: 3px 8px;
+  color: #007BFF;
+  text-align: center;
+  background-color: #f5c988;
+  border-radius: 4px;
 }
